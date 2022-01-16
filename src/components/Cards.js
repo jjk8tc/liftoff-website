@@ -13,7 +13,7 @@ function Cards() {
                         src="images/test image 1.jpg"
                         text="Test text"
                         label="Test label"
-                        path="/services"
+                        path="/portfolio"
                         />
                         <CardItem 
                         src="images/test image 2.jpg"
