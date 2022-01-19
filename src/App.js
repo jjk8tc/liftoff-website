@@ -7,6 +7,7 @@ import Services from './components/pages/Services';
 import Portfolio from './components/pages/Portfolio';
 import Contacts from './components/pages/Contacts';
 import Quote from './components/pages/Quote';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route path="/contacts" element={<Contacts />} />
         <Route path="/quote" element={<Quote />} />
       </Routes>
+      <Footer />
     </Router>
     </>
   );

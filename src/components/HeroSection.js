@@ -6,13 +6,13 @@ import './HeroSection.css';
 function HeroSection() {
     return (
         <div className='hero-container'>
-            <video src="/videos/video-2.mp4" autoPlay loop muted />
+            <video src="/videos/video-1.mp4" autoPlay loop muted />
             <h1>Concrete Awaits</h1>
             <p>Let us go to work for you!</p>
             <div className="hero-btns">
                 <Button className='btns' buttonStyle='btn--outline'
                 buttonSize='btn--large'>
-                    Get Started
+                    Get Quote
                 </Button>
                 <Button className='btns' buttonStyle='btn--primary'
                 buttonSize='btn--large'>
