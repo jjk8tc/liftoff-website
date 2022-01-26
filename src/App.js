@@ -10,6 +10,11 @@ import Quote from './components/pages/Quote';
 import Footer from './components/Footer';
 
 function App() {
+  // onSubmit = (fields) => {
+  //   console.log('App comp got: ', fields);
+
+  // };
+
   return (
     <>
     <Router>
@@ -21,6 +26,7 @@ function App() {
         <Route path="/contacts" element={<Contacts />} />
         <Route path="/quote" element={<Quote />} />
       </Routes>
+      {/* <Form onSubmit={fields => this.onSubmit(fields)}/> */}
       <Footer />
     </Router>
     </>
