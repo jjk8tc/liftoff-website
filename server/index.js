@@ -38,6 +38,18 @@ app.post('/create', (req, res) => {
     );
 });
 
+app.get('/quotelist', (req,res) => {
+    db.query("SELECT * FROM quotes", (err, result) => {
+        if (err) {
+            console.log(err);
+        } else {
+            res.send(result);
+        }
+    
+    });
+});
+
+
 app.listen(3002, ()=> {
     console.log("Yay, the server is running on port 3002");
 });

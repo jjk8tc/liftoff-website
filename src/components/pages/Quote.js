@@ -56,7 +56,7 @@ export default class Form extends React.Component {
             serviceType: this.state["serviceType"], 
             comments: this.state["comments"]
         }).then(() => {
-            console.log("Axios post to backend suceeded");
+            console.log("Axios post request to backend suceeded");
         });
     };
 

@@ -1,0 +1,20 @@
+.opportunities-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.quote-item{
+    width: 90%;
+    height: auto;
+    border: 1px solid black;
+    margin: 10px;
+    display: flex;
+    padding: 10px;
+
+}
+
+.quote-item h3{
+    margin: 20px;
+}

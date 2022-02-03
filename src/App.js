@@ -7,6 +7,7 @@ import Services from './components/pages/Services';
 import Portfolio from './components/pages/Portfolio';
 import Contacts from './components/pages/Contacts';
 import Quote from './components/pages/Quote';
+import Opportunities from './components/pages/Opportunities';
 import Footer from './components/Footer';
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
         <Route path="/portfolio" element={<Portfolio />} />
         <Route path="/contacts" element={<Contacts />} />
         <Route path="/quote" element={<Quote />} />
+        <Route path="/opportunities" element={<Opportunities />} />
       </Routes>
       {/* <Form onSubmit={fields => this.onSubmit(fields)}/> */}
       <Footer />
