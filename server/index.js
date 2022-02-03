@@ -49,6 +49,16 @@ app.get('/quotelist', (req,res) => {
     });
 });
 
+app.delete('/delete/:id', (req,res) => {
+    const id = req.params.id
+    db.query("DELETE FROM quotes WHERE id = ?", id, (err,result) => {
+        if (err) {
+            console.log(err);
+        } else {
+            res.send(result);
+        }
+    });
+});
 
 app.listen(3002, ()=> {
     console.log("Yay, the server is running on port 3002");
