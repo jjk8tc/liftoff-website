@@ -4,6 +4,7 @@ import '../../App.css';
 import './Quote.css';
 import Axios from 'axios';
 
+
 export default class Form extends React.Component {
     constructor(props) {
         super(props);
@@ -19,33 +20,17 @@ export default class Form extends React.Component {
         };
         this.onServiceOptionChange = this.onServiceOptionChange.bind(this);
     }
+
     
-    // state = {
-    //     firstName: '',
-    //     lastName: '',
-    //     username: '',
-    //     email: '',
-    //     password: '',
-    //     phone: '',
-    //     serviceType: 'patio',
-    //     comments: ''
-    // }
-
-
-  
+      
     change = (e) => {
         this.setState({[e.target.name]: e.target.value});
     };
-  
-    // onSubmit(e) {
-    //     e.preventDefault();
-    //     this.props.onSubmit(this.state);
-    // };
 
     handleFormSubmit = formSubmitEvent => {
         formSubmitEvent.preventDefault();
       
-        console.log("You have submitted:", this.state["serviceType"], this.state["firstName"],this.state["email"],this.state["comments"]);
+        //console.log("You have submitted:", this.state["serviceType"], this.state["firstName"],this.state["email"],this.state["comments"]);
 
         Axios.post('http://localhost:3002/create', {
             firstName: this.state["firstName"], 
@@ -58,6 +43,7 @@ export default class Form extends React.Component {
         }).then(() => {
             console.log("Axios post request to backend suceeded");
         });
+
     };
 
     onServiceOptionChange(event) {
@@ -66,9 +52,9 @@ export default class Form extends React.Component {
         });
     };
 
-    onChangeValue(event) {
-        console.log(event.target.value);
-    };
+    // onChangeValue(event) {
+    //     console.log(event.target.value);
+    // };
 
 
   
@@ -178,16 +164,4 @@ export default class Form extends React.Component {
             </div>
         )
     }
-  }
-  
-  
-  
-/////////////////////// ORIGINAL//////////////////
-// export default function Quote(){
-    
-//     return (
-//         <h1 className='quote'>QUOTE</h1>
-        
-//     )
-    
-// }
+}

@@ -36,12 +36,15 @@
   }
 
   .contacts {
+    display: block;
     background-image: url('/src/images/test image 3.jpg');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
     color: #fff;
-    font-size: 100px;
+    font-size: 3rem;
+    text-align: center;
+    padding-top: 25vh;
   }
   
   .quote {
