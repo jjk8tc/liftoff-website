@@ -31,6 +31,11 @@ function App() {
       {/* <Form onSubmit={fields => this.onSubmit(fields)}/> */}
       <Footer />
     </Router>
+
+    <script async
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAlfMPsFWDeFhvGx7ui9DFgGjbLRU71Wpg&libraries=places&callback=initMap">
+    </script>
+    
     </>
   );
 }

@@ -22,13 +22,14 @@ app.post('/create', (req, res) => {
     const email = req.body.email
     const phoneNumber = req.body.phoneNumber
     const serviceType = req.body.serviceType
+    const address = req.body.address
     const comments = req.body.comments
 
     // console.log(firstName);
     // console.log(typeof(firstName));
 
-    db.query("INSERT INTO quotes (first_name, last_name, username, email, phone_number, service_type, comments) VALUES (?,?,?,?,?,?,?)", 
-        [firstName, lastName, username, email, phoneNumber, serviceType, comments], 
+    db.query("INSERT INTO quotes (first_name, last_name, username, email, phone_number, service_type, address, comments) VALUES (?,?,?,?,?,?,?)", 
+        [firstName, lastName, username, email, phoneNumber, serviceType, addresss, comments], 
         (err, result) => {
             if (err) {
                 console.log(err)
@@ -48,6 +49,7 @@ app.post('/create', (req, res) => {
                 <li>Email: ${email}</li>
                 <li>Phone Number: ${phoneNumber}</li>
                 <li>Service Type: ${serviceType}</li>
+                <li>Job Site Address: ${address}</li>
                 <li>Comments: ${comments}</li>
             </ul>`;
 

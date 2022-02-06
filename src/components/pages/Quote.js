@@ -3,6 +3,13 @@ import React from 'react';
 import '../../App.css';
 import './Quote.css';
 import Axios from 'axios';
+import { GoogleMap, withScriptjs, withGoogleMap } from 'react-google-maps';
+
+function Map() {
+    return <GoogleMap defaultZoom={10} defaultCenter={{lat: 43.186008, lng:-95.845001}}/>;
+}
+
+const WrappedMap = withScriptjs(withGoogleMap(Map)); 
 
 
 export default class Form extends React.Component {
@@ -16,12 +23,14 @@ export default class Form extends React.Component {
             password: '',
             phoneNumber: '',
             serviceType: 'pad',
+            address: '',
             comments: ''
         };
+        
         this.onServiceOptionChange = this.onServiceOptionChange.bind(this);
+        
     }
-
-    
+   
       
     change = (e) => {
         this.setState({[e.target.name]: e.target.value});
@@ -35,10 +44,11 @@ export default class Form extends React.Component {
         Axios.post('http://localhost:3002/create', {
             firstName: this.state["firstName"], 
             lastName: this.state["lastName"], 
-            username: this.state["username"], 
+            // username: this.state["username"], 
             email: this.state["email"], 
             phoneNumber: this.state["phoneNumber"], 
             serviceType: this.state["serviceType"], 
+            address: this.state["address"],
             comments: this.state["comments"]
         }).then(() => {
             console.log("Axios post request to backend suceeded");
@@ -51,10 +61,7 @@ export default class Form extends React.Component {
             serviceType: event.target.value
         });
     };
-
-    // onChangeValue(event) {
-    //     console.log(event.target.value);
-    // };
+   
 
 
   
@@ -79,13 +86,13 @@ export default class Form extends React.Component {
                     value={this.state.lastName} 
                     onChange={e => this.change(e)} />
 
-                    <br />
+                    {/* <br />
                     <input 
                     name="username"
                     className='form-input'
                     placeholder='username' 
                     value={this.state.username} 
-                    onChange={e => this.change(e)} />
+                    onChange={e => this.change(e)} /> */}
 
                     <br />
                     <input 
@@ -96,14 +103,14 @@ export default class Form extends React.Component {
                     value={this.state.email} 
                     onChange={e => this.change(e)} />
                     
-                    <br />
+                    {/* <br />
                     <input 
                     name="password"
                     className='form-input'
                     type="password"
                     placeholder='password' 
                     value={this.state.password} 
-                    onChange={e => this.change(e)} />
+                    onChange={e => this.change(e)} /> */}
 
                     <br />
                     <input 
@@ -149,6 +156,25 @@ export default class Form extends React.Component {
                                 onChange={this.onServiceOptionChange} /> Driveway
                             </label>
                         </div>
+                    </div>
+
+                    <br />
+                    <input 
+                    name="address"
+                    className='form-input'
+                    placeholder='Address/Approx Location of work to be done' 
+                    value={this.state.address} 
+                    onChange={e => this.change(e)} />
+
+                    <br />
+                    <div className='map-box' style={{width:'60vw', height:'70vh', margin:'auto'}}>
+                        <WrappedMap 
+                            googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&
+                            libraries=goemetry,drawing,places&key=${process.env.REACT_APP_GOOGLE_MAPS_API_KEY}`}
+                            loadingElement={<div style={{ height: "100%" }}/>}
+                            containerElement={<div style={{ height: "100%" }}/>}
+                            mapElement={<div style={{ height: "100%" }}/>}
+                        />
                     </div>
 
                     <br />

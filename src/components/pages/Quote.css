@@ -1,5 +1,5 @@
 .form-box{
-    height: 1200px;
+    height: 1500px;
     min-width: 100%;
     background-image: url('/src/images/test image 1.jpg');
     background-position: center;
@@ -7,7 +7,7 @@
     background-repeat: no-repeat;
     margin: 0vw;
     padding: 5vw ;
-    position:relative;
+    position: relative;
 }
 
 .form-box h5{
@@ -21,7 +21,7 @@
   display: block;
   width: 50%;
   padding: .5rem .8rem .5rem .8rem;
-  margin: .5vw 25% ;
+  margin: .1vw 25% ;
   align-self: center;
   border: 0;
   border-radius: 5px;
@@ -32,8 +32,8 @@
   display: block;
   width: 50%;
   height: 10vw;
-  padding: .5rem .8rem .5rem .8rem;
-  margin: .5vw 25% ;
+  padding: 0rem .8rem .5rem .8rem;
+  margin: 0rem 25% 1vw;
   align-self: center;
   border: 0;
   border-radius: 5px;
@@ -62,7 +62,7 @@
   display: block;
   width: 50%;
   padding: 0 .8rem .5rem .8rem;
-  margin: 3vw 25% ;
+  margin: 2vw 25% .5vw;
   align-self: center;
   border: 0;
   border-radius: 5px;

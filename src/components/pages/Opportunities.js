@@ -23,7 +23,7 @@ export default function Opportunities(){
     const deleteQuote = (id) => {
         Axios.delete(`http://localhost:3002/delete/${id}`).then((response) => {
             setQuoteList(quoteList.filter((val)=> {
-                return val.id != id;
+                return val.id !== id;
             }));
         });
     };
